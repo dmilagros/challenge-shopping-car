@@ -1,0 +1,12 @@
+.divider,
+.hidden {
+  width: 100%;
+  margin: 10px 0;
+}
+.divider {
+  border-top: 1px solid var(--divider);
+}
+
+.hidden {
+  border-top: 0px;
+}
