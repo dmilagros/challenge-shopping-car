@@ -1,0 +1,30 @@
+@import "./article.css";
+@import "./divider.css";
+@import "./button.css";
+
+:root {
+  --fontBase: "Roboto", sans-serif;
+  --headline1: 700 24px var(--fontBase);
+  --headline2: 700 18px var(--fontBase);
+  --headline3: 700 12px var(--fontBase);
+  --body1: 400 18px var(--fontBase);
+  --body2: 400 12px var(--fontBase);
+  --body3: 400 8px var(--fontBase);
+  --primary: #5d5fef;
+  --secondary: #ffffff;
+  --divider: #7879f1;
+  --fontBase: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+  color: var(--secondary);
+  font-family: var(--fontBase);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
