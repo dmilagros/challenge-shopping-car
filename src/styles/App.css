@@ -1,0 +1,67 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 351px;
+  padding: 24px;
+  background: var(--primary);
+}
+hr {
+  width: 100%;
+  border-top: 0.5px solid #bbb;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0px;
+}
+
+h1 {
+  font: var(--headline1);
+}
+
+h2 {
+  font: var(--headline2);
+}
+
+h3 {
+  font: var(--headline3);
+}
+
+.subtotal,
+.envio,
+.total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container .empty-shopping-cart {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.empty-shopping-cart .link {
+  padding: 0;
+  height: 14px;
+}
+
+.container .empty-shopping-cart .text-link {
+  font: var(--body2);
+  text-align: right;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0;
+}
