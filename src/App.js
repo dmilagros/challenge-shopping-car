@@ -30,15 +30,59 @@ function App() {
     getSubtotalIncrease();
   }, [products]);
 
-  function getSubtotalDecrease() {}
+  function getSubtotalDecrease() {
+    let subt = 0;
+    products.forEach(function (elemento, indice) {
+      subt -= elemento["price"] * elemento["amount"];
+    });
+    setSubtotal(Math.abs(subt.toFixed(2)));
+  }
 
-  function getSubtotalIncrease() {}
+  function getSubtotalIncrease() {
+    let suma = 0;
+    products.forEach(function (elemento, indice) {
+      suma += elemento["price"] * elemento["amount"];
+    });
+    setSubtotal(Math.abs(suma.toFixed(2)));
+  }
 
-  const handleRemoveItem = (id) => {};
+  const handleRemoveItem = (id) => {
+    const newList = products.filter((item) => item.id !== id);
+    setProducts(newList);
+    if (products.length === 1) {
+      setShipping(0);
+    }
+  };
 
-  const handleDecreaseQuantity = (id, amount) => {};
+  const handleDecreaseQuantity = (id, amount) => {
+    const newList = products.map((product) => {
+      if (product.id === id && product.amount > 1) {
+        const updatedProduct = {
+          ...product,
+          amount: amount - 1,
+        };
+        return updatedProduct;
+      }
+      return product;
+    });
+    setProducts(newList);
+    getSubtotalDecrease();
+  };
 
-  const handleIncreaseQuantity = (id, amount) => {};
+  const handleIncreaseQuantity = (id, amount) => {
+    const newList = products.map((product) => {
+      if (product.id === id) {
+        const updatedProduct = {
+          ...product,
+          amount: amount + 1,
+        };
+        return updatedProduct;
+      }
+      return product;
+    });
+    setProducts(newList);
+    getSubtotalIncrease();
+  };
 
   const handleClearOut = () => {
     setProducts([]);
